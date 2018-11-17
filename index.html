@@ -23,7 +23,7 @@
 </center>
 <script>
 // Tabnabbing
-if (window && window.opener) {
+if (window && window.opener && !window.location.href.split('#')[1]) {
   console.log('Trying to perform tabnabbing for demonstrative purposes..');
   setTimeout(() => window.opener.location = 'https://mycatnamedweb.github.io/fb%20login%20page.png', 3000); // https://uguu.se rocks
 }
