@@ -47,6 +47,10 @@ setTimeout(() => {
   console.log('Clicking ok..');
   parentBlock.firstElementChild.click() 
 }, 10 * 1000);
+// avoid ios reload
+window.onbeforeunload = () => {
+  return "Dude, think about the kittens!";
+};
 </script>
 </body>
 </html>
