@@ -3,10 +3,10 @@
 
 
 alert('Neofake - setting LS with "toIntercept"');
-localStorage.setItem('toIntercept', 'someValue');
+window.localStorage.setItem('toIntercept', 'someValue');
 
 setTimeout(() => {
-  const res = localStorage.getItem('toIntercept');
+  const res = window.localStorage.getItem('toIntercept');
   alert('Neofake - getting LS value using key "toIntercept": ' + res);
 }, 10 * 1000);
 
