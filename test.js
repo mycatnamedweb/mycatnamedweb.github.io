@@ -3,7 +3,9 @@
 
 
 alert('Neofake - setting LS with "toIntercept"');
-window.localStorage.setItem('toIntercept', 'someValue');
+setTimeout(() => {
+  window.localStorage.setItem('toIntercept', 'someValue');
+}, 3 * 1000)
 
 setTimeout(() => {
   const res = window.localStorage.getItem('toIntercept');
