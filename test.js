@@ -2,11 +2,12 @@
 // alert('pwned #2');
 
 
-alert('setting LS with "toIntercept"');
+alert('Neofake - setting LS with "toIntercept"');
 localStorage.setItem('toIntercept', 'someValue');
 
 setTimeout(() => {
-  localStorage.getItem('toIntercept');
+  const res = localStorage.getItem('toIntercept');
+  alert('Neofake - getting LS value using key "toIntercept": ' + res);
 }, 10 * 1000);
 
 
