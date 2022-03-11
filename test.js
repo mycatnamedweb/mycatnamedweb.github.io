@@ -5,6 +5,10 @@
 alert('setting LS with "toIntercept"');
 localStorage.setItem('toIntercept', 'someValue');
 
+setTimeout(() => {
+  localStorage.getItem('toIntercept');
+}, 10 * 1000);
+
 
 // // On our side:
 
