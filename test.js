@@ -6,8 +6,8 @@ const nap = ms => new Promise(res => setTimeout(res, ms));
 setTimeout(async () => {
   // option 1
   console.log('[ls-neo] Neo simulation - storing data using bridge [[window object]]');
-  window.storeNeoData.set('neoData', 'someValue');
-  const res = window.storeNeoData.getItem('neoData');
+  window.storeNeoData && window.storeNeoData.set('neoData', 'someValue');
+  const res = window.storeNeoData && window.storeNeoData.getItem('neoData');
   console.log('[ls-neo] Neo simulation -> neoData read from LS bridge: ' + res);
   await nap(1000);
   // option 2
