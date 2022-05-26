@@ -11,7 +11,7 @@ setTimeout(async () => {
   console.log('[ls-neo] Neo simulation -> neoData read from LS bridge: ' + res);
   await nap(1000);
   // option 2
-  document.addEventListener('message', (msg = {}) => console.log('[ls-neo] message listener in catweb script received:', { msg }));
+  window.addEventListener('message', (msg = {}) => console.log('[ls-neo] message listener in catweb script received:', { msg }));
   console.log('[ls-neo] Neo simulation - storing data using bridge [[postMessage]]');
   window.parent.postMessage({ action: 'czrLs.setItem', key: 'pizza', value: '1234' }, '*');
   console.log('[ls-neo] Neo simulation - done, now retrieving [[postMessage]]');
