@@ -5,13 +5,13 @@ const nap = ms => new Promise(res => setTimeout(res, ms));
 
 setTimeout(async () => {
   // option 1
-  alert('Neo simulation - storing data using bridge (window object)');
+  /*alert*/console.log('[ls-neo] Neo simulation - storing data using bridge (window object)');
   window.storeNeoData && window.storeNeoData.set('neoData', 'someValue');
   const res = window.storeNeoData && window.storeNeoData.getItem('neoData');
   console.log('[ls-neo] Neo simulation -> neoData read from LS bridge: ' + res);
   await nap(1000);
   // option 2
-  window.addEventListener('message', (msg = {}) => alert(`Neo simulation - message received in iframe: ${JSON.stringify(msg)}`));
+  window.addEventListener('message', (msg = {}) => /*alert*/console.log(`[ls-neo] Neo simulation - message received in iframe: ${JSON.stringify(msg)}`));
   console.log('[ls-neo] Neo simulation - storing data using bridge [[postMessage]]');
   window.parent.postMessage({ action: 'czrLs.setItem', key: 'pizza', value: '1234' }, '*');
   console.log('[ls-neo] Neo simulation - done, now retrieving [[postMessage]]');
