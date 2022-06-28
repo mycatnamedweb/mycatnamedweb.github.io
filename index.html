@@ -1,8 +1,8 @@
 <html>
 <body>
 <script>
-window.addEventListener('onvrdisplayconnect', alert('VR display connected'));
-window.addEventListener('gamepadconnected', alert('gamepad connected'));
+window.addEventListener('onvrdisplayconnect', () => alert('VR display connected'));
+window.addEventListener('gamepadconnected', () => alert('gamepad connected'));
 alert('vr displays: ' + JSON.stringify(Navigator.getVRDisplays && Navigator.getVRDisplays()) + ', ' + Navigator.activeVRDisplays);
 Object.entries(getEventListeners(document)).map(el => el[0]).forEach(event => document.addEventListener(event, (data) => alert(event + ': ' + JSON.stringify(data))));
 </script>
